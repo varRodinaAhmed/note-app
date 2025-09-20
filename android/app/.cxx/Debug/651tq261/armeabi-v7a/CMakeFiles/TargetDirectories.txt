@@ -1,0 +1,2 @@
+E:/depi1/business card project/business_card/android/app/.cxx/Debug/651tq261/armeabi-v7a/CMakeFiles/edit_cache.dir
+E:/depi1/business card project/business_card/android/app/.cxx/Debug/651tq261/armeabi-v7a/CMakeFiles/rebuild_cache.dir
