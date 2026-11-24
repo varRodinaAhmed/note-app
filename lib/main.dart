@@ -9,8 +9,10 @@ import 'package:hive_flutter/adapters.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
-  await Hive.openBox(HiveHelper.noteBox);
   Hive.registerAdapter(NoteAdapter());
+  Hive.registerAdapter(ColorAdapter());
+  await Hive.openBox(HiveHelper.noteBox);
+
   HiveHelper.getNotes();
   runApp(const MyApp());
 }

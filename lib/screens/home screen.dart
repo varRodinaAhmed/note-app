@@ -200,7 +200,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-List<Note> getShownList() {
+List<dynamic> getShownList() {
   if (showFavourite == true) {
     return HiveHelper.notes.where((e) => e.isFavourite == true).toList();
   } else {

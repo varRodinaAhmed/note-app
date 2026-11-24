@@ -6,7 +6,7 @@ import 'package:hive_flutter/adapters.dart';
 class HiveHelper {
   static const String noteBox = 'noteBox';
   static const noteKey = "noteKey";
-  static late List<Note> notes;
+  static late List<dynamic> notes;
   static var box = Hive.box(noteBox);
   static void addNote(
       {required String noteTitle,
@@ -27,12 +27,17 @@ class HiveHelper {
   }
 
   static void editNote(int index, Note editedNote) async {
+    Note oldNote = notes[index];
+    if (oldNote.isFavourite == true) {
+      editedNote.isFavourite = true;
+    }
     notes[index] = editedNote;
     await box.put(noteKey, notes);
   }
 
   static void editNoteFromFavourite(Note oldNote, Note editedNote) async {
     int indexOfNote = notes.indexOf(oldNote);
+    editedNote.isFavourite = true;
     notes[indexOfNote] = editedNote;
     await box.put(noteKey, notes);
   }

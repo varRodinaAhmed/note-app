@@ -12,7 +12,7 @@ final _textController3 = TextEditingController();
 final _textController4 = TextEditingController();
 
 class noteList extends StatefulWidget {
-  late List<Note> listShowed;
+  late List<dynamic> listShowed;
   noteList({super.key, required this.listShowed});
 
   @override
